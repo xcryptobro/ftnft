@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { dollarFormat } from '@/lib/format'
+import { microDollarFormat } from '@/lib/format'
 
 export default function Token({ price, img }: { price: number; img: string }) {
   return (
@@ -11,7 +11,9 @@ export default function Token({ price, img }: { price: number; img: string }) {
         height='100'
         className='rounded-full'
       />
-      <p className='text-2xl text-center'>Price: {dollarFormat(price, 6)}</p>
+      <p className='text-2xl text-center'>
+        Price: {microDollarFormat(price, 6)}
+      </p>
     </div>
   )
 }
