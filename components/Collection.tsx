@@ -40,10 +40,12 @@ export default function Collection({
           <div>
             <h2 className='card-title'>{title}</h2>
             <p>
-              Highest&nbsp;Bid:&nbsp;{bid}&nbsp;({dollarFormat(bidUsd)})<br />
-              Lowest&nbsp;Ask:&nbsp;{ask}&nbsp;({dollarFormat(askUsd)})<br />
+              Floor:&nbsp;{ask}&nbsp;ETH&nbsp;({dollarFormat(askUsd)})<br />
               Locked&nbsp;Tokens:&nbsp;{commaFormat(locked)}&nbsp;(
               {dollarFormat(lockedUsd)})
+              <br />
+              Current&nbsp;Token&nbsp;Price:&nbsp;
+              {microDollarFormat(tokenPriceUsd, 6)}
               <br />
               Effective&nbsp;Token&nbsp;Price:&nbsp;
               {microDollarFormat(effectivePrice, 6)}
