@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { dollarFormat, commaFormat } from '@/lib/format'
+import { dollarFormat, microDollarFormat, commaFormat } from '@/lib/format'
 
 export default function Collection({
   title,
@@ -24,6 +24,7 @@ export default function Collection({
   tokenPriceUsd: number
   contract: string
 }) {
+  const lockedUsd = tokenPriceUsd * locked
   const effectivePrice = askUsd / locked
   const discount = tokenPriceUsd - effectivePrice
   return (
@@ -41,12 +42,13 @@ export default function Collection({
             <p>
               Highest&nbsp;Bid:&nbsp;{bid}&nbsp;({dollarFormat(bidUsd)})<br />
               Lowest&nbsp;Ask:&nbsp;{ask}&nbsp;({dollarFormat(askUsd)})<br />
-              Locked&nbsp;Tokens:&nbsp;{commaFormat(locked)}
+              Locked&nbsp;Tokens:&nbsp;{commaFormat(locked)}&nbsp;(
+              {dollarFormat(lockedUsd)})
               <br />
               Effective&nbsp;Token&nbsp;Price:&nbsp;
-              {dollarFormat(effectivePrice, 6)}
+              {microDollarFormat(effectivePrice, 6)}
               <br />
-              Token&nbsp;Discount:&nbsp;{dollarFormat(discount, 6)}
+              Token&nbsp;Discount:&nbsp;{microDollarFormat(discount, 6)}
             </p>
             <div className='card-actions justify-end'>
               <a
