@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='flex flex-row justify-center gap-16'>
+      <div className='flex flex-col lg:flex-row justify-center gap-16'>
         <div>
           <Link href='/memeland'>
             <Token price={memePrice} img={memeImage} />

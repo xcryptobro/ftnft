@@ -63,39 +63,33 @@ export default async function PixelmonPage() {
   // }
 
   return (
-    <div className='flex flex-col'>
-      <div className='flex flex-row justify-center gap-8 pt-16'>
-        <Token price={mon} img={monImage} />
-      </div>
-      <div className='flex flex-row justify-center gap-8 pt-16'>
-        <div>
-          <Collection
-            title='Pixelmon'
-            img={pixelmon.img}
-            banner={pixelmon.banner}
-            ask={pixelmon.ask}
-            askUsd={pixelmon.askUsd}
-            bid={pixelmon.bid}
-            bidUsd={pixelmon.bidUsd}
-            locked={pixelmonInfo.locked.common}
-            tokenPriceUsd={mon || 0}
-            contract={pixelmonInfo.contract}
-          />
-        </div>
-        <div>
-          <Collection
-            title='Trainers'
-            img={trainer.img}
-            banner={trainer.banner}
-            ask={trainer.ask}
-            askUsd={trainer.askUsd}
-            bid={trainer.bid}
-            bidUsd={trainer.bidUsd}
-            locked={trainerInfo.locked.common}
-            tokenPriceUsd={mon || 0}
-            contract={trainerInfo.contract}
-          />
-        </div>
+    <div className='flex flex-col pt-16 gap-8 items-center'>
+      <Token price={mon} img={monImage} />
+      <div className='flex flex-col xl:flex-row justify-center gap-8 pt-16'>
+        <Collection
+          title='Pixelmon'
+          img={pixelmon.img}
+          banner={pixelmon.banner}
+          ask={pixelmon.ask}
+          askUsd={pixelmon.askUsd}
+          bid={pixelmon.bid}
+          bidUsd={pixelmon.bidUsd}
+          locked={pixelmonInfo.locked.common}
+          tokenPriceUsd={mon || 0}
+          contract={pixelmonInfo.contract}
+        />
+        <Collection
+          title='Trainers'
+          img={trainer.img}
+          banner={trainer.banner}
+          ask={trainer.ask}
+          askUsd={trainer.askUsd}
+          bid={trainer.bid}
+          bidUsd={trainer.bidUsd}
+          locked={trainerInfo.locked.common}
+          tokenPriceUsd={mon || 0}
+          contract={trainerInfo.contract}
+        />
       </div>
     </div>
   )

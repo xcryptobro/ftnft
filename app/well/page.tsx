@@ -25,53 +25,45 @@ export default async function WellPage() {
   const kubz = await getCollection(kubzInfo.contract)
 
   return (
-    <div className='flex flex-col gap-8 py-8'>
-      <div className='flex flex-row justify-center gap-8 text-center'>
-        <Token price={well3Price} img={well3Image} />
-      </div>
-      <div className='flex flex-row justify-center gap-8'>
-        <div>
-          <Collection
-            title='Keungz Genesis'
-            img={kzg.img}
-            banner={kzg.banner}
-            ask={kzg.ask}
-            askUsd={kzg.askUsd}
-            bid={kzg.bid}
-            bidUsd={kzg.bidUsd}
-            locked={genesisInfo.locked}
-            tokenPriceUsd={well3Price}
-            contract={genesisInfo.contract}
-          />
-        </div>
-        <div>
-          <Collection
-            title='Yogapetz'
-            img={yp.img}
-            banner={yp.banner}
-            ask={yp.ask}
-            askUsd={yp.askUsd}
-            bid={yp.bid}
-            bidUsd={yp.bidUsd}
-            locked={yogapetzInfo.locked}
-            tokenPriceUsd={well3Price}
-            contract={yogapetzInfo.contract}
-          />
-        </div>
-        <div>
-          <Collection
-            title='Kubz'
-            img={kubz.img}
-            banner={kubz.banner}
-            ask={kubz.ask}
-            askUsd={kubz.askUsd}
-            bid={kubz.bid}
-            bidUsd={kubz.bidUsd}
-            locked={kubzInfo.locked}
-            tokenPriceUsd={well3Price}
-            contract={kubzInfo.contract}
-          />
-        </div>
+    <div className='flex flex-col gap-8 py-8  items-center'>
+      <Token price={well3Price} img={well3Image} />
+      <div className='flex flex-col xl:flex-row justify-center gap-8'>
+        <Collection
+          title='Keungz Genesis'
+          img={kzg.img}
+          banner={kzg.banner}
+          ask={kzg.ask}
+          askUsd={kzg.askUsd}
+          bid={kzg.bid}
+          bidUsd={kzg.bidUsd}
+          locked={genesisInfo.locked}
+          tokenPriceUsd={well3Price}
+          contract={genesisInfo.contract}
+        />
+        <Collection
+          title='Yogapetz'
+          img={yp.img}
+          banner={yp.banner}
+          ask={yp.ask}
+          askUsd={yp.askUsd}
+          bid={yp.bid}
+          bidUsd={yp.bidUsd}
+          locked={yogapetzInfo.locked}
+          tokenPriceUsd={well3Price}
+          contract={yogapetzInfo.contract}
+        />
+        <Collection
+          title='Kubz'
+          img={kubz.img}
+          banner={kubz.banner}
+          ask={kubz.ask}
+          askUsd={kubz.askUsd}
+          bid={kubz.bid}
+          bidUsd={kubz.bidUsd}
+          locked={kubzInfo.locked}
+          tokenPriceUsd={well3Price}
+          contract={kubzInfo.contract}
+        />
       </div>
     </div>
   )

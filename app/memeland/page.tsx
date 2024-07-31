@@ -29,53 +29,45 @@ export default async function MemePage() {
   const captainz = await getCollection(captainzInfo.contract)
   const potatoz = await getCollection(potatozInfo.contract)
   return (
-    <div className='flex flex-col'>
-      <div className='flex flex-row justify-center gap-8 pt-16'>
-        <Token price={meme} img={memeImage} />
-      </div>
-      <div className='flex flex-row justify-center gap-8 pt-16'>
-        <div>
-          <Collection
-            title='MVP'
-            img={mvp.img}
-            banner={mvp.banner}
-            ask={mvp.ask}
-            askUsd={mvp.askUsd}
-            bid={mvp.bid}
-            bidUsd={mvp.bidUsd}
-            locked={mvpInfo.locked}
-            tokenPriceUsd={meme}
-            contract={mvpInfo.contract}
-          />
-        </div>
-        <div>
-          <Collection
-            title='Captainz'
-            img={captainz.img}
-            banner={captainz.banner}
-            ask={captainz.ask}
-            askUsd={captainz.askUsd}
-            bid={captainz.bid}
-            bidUsd={captainz.bidUsd}
-            locked={captainzInfo.locked}
-            tokenPriceUsd={meme}
-            contract={captainzInfo.contract}
-          />
-        </div>
-        <div>
-          <Collection
-            title='Potatoz'
-            img={potatoz.img}
-            banner={potatoz.banner}
-            ask={potatoz.ask}
-            askUsd={potatoz.askUsd}
-            bid={potatoz.bid}
-            bidUsd={potatoz.bidUsd}
-            locked={potatozInfo.locked}
-            tokenPriceUsd={meme}
-            contract={potatozInfo.contract}
-          />
-        </div>
+    <div className='flex flex-col pt-16 gap-8 items-center'>
+      <Token price={meme} img={memeImage} />
+      <div className='flex flex-col xl:flex-row justify-center gap-8'>
+        <Collection
+          title='MVP'
+          img={mvp.img}
+          banner={mvp.banner}
+          ask={mvp.ask}
+          askUsd={mvp.askUsd}
+          bid={mvp.bid}
+          bidUsd={mvp.bidUsd}
+          locked={mvpInfo.locked}
+          tokenPriceUsd={meme}
+          contract={mvpInfo.contract}
+        />
+        <Collection
+          title='Captainz'
+          img={captainz.img}
+          banner={captainz.banner}
+          ask={captainz.ask}
+          askUsd={captainz.askUsd}
+          bid={captainz.bid}
+          bidUsd={captainz.bidUsd}
+          locked={captainzInfo.locked}
+          tokenPriceUsd={meme}
+          contract={captainzInfo.contract}
+        />
+        <Collection
+          title='Potatoz'
+          img={potatoz.img}
+          banner={potatoz.banner}
+          ask={potatoz.ask}
+          askUsd={potatoz.askUsd}
+          bid={potatoz.bid}
+          bidUsd={potatoz.bidUsd}
+          locked={potatozInfo.locked}
+          tokenPriceUsd={meme}
+          contract={potatozInfo.contract}
+        />
       </div>
     </div>
   )
