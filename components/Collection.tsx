@@ -28,7 +28,7 @@ export default function Collection({
   const effectivePrice = askUsd / locked
   const discount = tokenPriceUsd - effectivePrice
   return (
-    <div className='card bg-base-100 w-96 shadow-xl'>
+    <div className='card bg-base-100 w-[28rem] shadow-xl'>
       <figure>
         <Image src={banner} alt={title} width={1000} height={250} />
       </figure>
